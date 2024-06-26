@@ -12,3 +12,4 @@ fb2.addEventListener('dblclick',function(){
     im2.style.height='0';
     im2.style.width= '0';
 })
+
