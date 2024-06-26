@@ -1,0 +1,292 @@
+/* Basic styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url(IMAGES/hBSGFt6IRoQ.png);
+    background-size: cover;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    color: #fff;
+}
+
+header {
+    background-color: #000000; /* Dark background for header */
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+    border: 5px;
+    border-color: rgb(11, 2, 66);
+    justify-content: space-between;
+    align-items: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    background-position: center;
+    background-color: #03182e;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+    animation-duration: 1.5s;
+    font: bold;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    animation-duration: 1s;
+    font-weight: bold; /* Font weight */
+    margin: 0 10px; /* Margin around each link */
+    padding: 10px 15px; /* Padding inside each link */
+    border-radius: 5px; /* Rounded corners */
+    
+}
+a:hover {
+    background-color: #080073f6; /* Darken background on hover */
+    color: #fff; /* Change text color on hover */
+    border-radius: 10%;
+}
+
+section {
+    padding: 50px 0;
+}
+
+section h2 {
+    margin-bottom: 20px;
+    text-align: center;
+    animation-duration: 1.5s;
+}
+
+.services-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border: 5px;
+}
+
+.services-buttons button {
+    margin: 10px;
+    padding: 15px 30px;
+    font-size: 16px;
+    background-color: #007bff; /* Bootstrap's primary blue color */
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    animation-duration: 1s;
+    border: 5px;
+    border-color: #fff;
+    font: bold;
+
+}
+
+.services-buttons button:hover {
+    background-color: #061d35; /* Darker shade of blue on hover */
+    border-radius: 12.5%;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    animation-duration: 1.5s;
+}
+
+footer p {
+    margin: 0;
+    animation-duration: 1s;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+@keyframes bounceIn {
+    from {
+        transform: scale(0);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+span{
+    position: fixed;
+    bottom: -50px ;
+    height:30px;
+    width:30px;
+    border-radius:50%;
+    animation: animate 10s linear infinite ;
+}
+
+span:nth-child(1){
+    left:0;
+    animation-delay: .6s;
+    background-color: #fff;
+}
+span:nth-child(2){
+    left:10%;
+    animation-delay: 3s;
+    background-color: #fff;
+}
+
+span:nth-child(3){
+    left:20%;
+    animation-delay: 2.5s;
+    background-color: #fff;
+}
+
+span:nth-child(4){
+    left:30%;
+    animation-delay: 6.5s;
+    background-color: #fff;
+}
+span:nth-child(5){
+    left:40%;
+    animation-delay: 6s;
+    background-color: #fff;
+}
+span:nth-child(6){
+    left:50%;
+    animation-delay: 1s;
+    background-color: #000;
+}
+span:nth-child(7){
+    left:60%;
+    animation-delay: 7s;
+    background-color: #000;
+}
+span:nth-child(8){
+    left:70%;
+    animation-delay: 2s;
+    background-color: #000;
+}
+span:nth-child(9){
+    left:80%;
+    animation-delay: 8.5s;
+    background-color: #000;
+}
+span:nth-child(10){
+    left:90%;
+    animation-delay: 3.7s;
+    background-color: #fff;
+}
+@keyframes animate{
+    0%{
+        bottom: 0;
+        margin-left: 90px ;
+        margin-right: 0;
+    }
+    20%{
+        bottom: 20%;
+        margin-left:0 ;
+        margin-right: 90px;
+    }
+    40%{
+        bottom:40% ;
+        margin-left:0 ;
+        margin-right: 90px;
+    }
+    60%{
+        bottom: 60%;
+        margin-left:90px;
+        margin-right: 0;
+    }
+    80%{
+        bottom:80% ;
+        margin-left:0 ;
+        margin-right: 90px;
+    }
+}
+
+.contain1{
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #000;
+
+}
+.contain2{
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+.an2{
+    font-size: 20px;
+    font: bold;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.an3{
+    font-size: 20px;
+    font: bold;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+#im2{
+    background-image: url(IMAGES/MYPIC2.png);
+    background-position: center;
+    height: 0;
+    width: 0;
+    background-size: cover;
+    background-repeat: no-repeat
+}
