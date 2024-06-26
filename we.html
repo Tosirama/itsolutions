@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Design Services</title>
+    <style>
+        /* Stars Animation Styles */
+        @function random_range($min, $max) {
+            $rand: random();
+            $random_range: $min + floor($rand * (($max - $min) + 1));
+            @return $random_range;
+        }
+
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .star {
+            --star-color: #ffffff;
+            --star-tail-length: 6em;
+            --star-tail-height: 2px;
+            --star-width: calc(var(--star-tail-length) / 6);
+            --fall-duration: 9s;
+            --tail-fade-duration: var(--fall-duration);
+
+            position: absolute;
+            top: var(--top-offset);
+            left: 0;
+            width: var(--star-tail-length);
+            height: var(--star-tail-height);
+            color: var(--star-color);
+            background: linear-gradient(45deg, currentColor, transparent);
+            border-radius: 50%;
+            filter: drop-shadow(0 0 6px currentColor);
+            transform: translate3d(104em, 0, 0);
+            animation: fall var(--fall-duration) var(--fall-delay) linear infinite, tail-fade var(--tail-fade-duration) var(--fall-delay) ease-out infinite;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translate3d(-30em, 100vh, 0);
+            }
+        }
+
+        @keyframes tail-fade {
+            0%, 50% {
+                width: var(--star-tail-length);
+                opacity: 1;
+            }
+
+            70%, 80% {
+                width: 0;
+                opacity: 0.4;
+            }
+
+            100% {
+                width: 0;
+                opacity: 0;
+            }
+        }
+
+        @media screen and (max-width: 750px) {
+            .star {
+                animation: fall var(--fall-duration) var(--fall-delay) linear infinite;
+            }
+        }
+
+        /* Main Content Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background: radial-gradient(ellipse at bottom, #0d1d31 0%, #0c0d13 100%);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: #ffffff;
+            overflow: hidden;
+        }
+
+        .advert-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 90%;
+            position: relative;
+            overflow: hidden;
+            border: 5px solid #007bff;
+            border-image: linear-gradient(to right, #007bff, #00d4ff) 1;
+            color: #000000;
+            z-index: 1; /* Ensure content is above stars */
+        }
+
+        .advert-container h1 {
+            text-align: center;
+            margin-top: 0;
+            color: #007bff;
+        }
+
+        .advert-container p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .advert-container .icons {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0;
+        }
+
+        .advert-container .icons i {
+            font-size: 2em;
+            color: #007bff;
+        }
+
+        .advert-container .cta-button {
+            display: block;
+            width: 100%;
+            text-align: center;
+            padding: 15px 0;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            transition: background-color 0.3s;
+            margin-top: 20px;
+        }
+
+        .advert-container .cta-button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Contact Button Styles */
+        .contact-button {
+            display: inline-block;
+            padding: 15px 25px;
+            border-radius: 50%;
+            border: 3px solid #007bff;
+            color: #007bff;
+            font-size: 1.2em;
+            text-decoration: none;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0, 123, 255, 0.4);
+            position: relative;
+            overflow: hidden;
+            transition: color 0.3s, border-color 0.3s, box-shadow 0.3s;
+        }
+
+        .contact-button::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 300%;
+            height: 300%;
+            background-color: #007bff;
+            opacity: 0;
+            transition: opacity 0.3s, transform 0.3s;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+        }
+
+        .contact-button:hover::before {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1.2);
+        }
+
+        .contact-button:hover {
+            color: #ffffff;
+            border-color: #ffffff;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+
+<!-- Stars Animation -->
+<div class="stars">
+    <!-- Generate stars dynamically using JavaScript -->
+    <script>
+        const starContainer = document.querySelector('.stars');
+        const numStars = 50; // Number of stars
+
+        for (let i = 0; i < numStars; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            starContainer.appendChild(star);
+            star.style.setProperty('--top-offset', `${Math.random() * 100}vh`);
+            star.style.setProperty('--fall-duration', `${Math.random() * 6 + 6}s`);
+            star.style.setProperty('--fall-delay', `${Math.random() * 10}s`);
+        }
+    </script>
+</div>
+
+<!-- Main Content -->
+<div class="advert-container">
+    <h1>Professional Web Design Services</h1>
+    <p>Transform your business with stunning, responsive, and user-friendly websites crafted by our expert designers. We bring your vision to life with cutting-edge technology and creativity.</p>
+    <div class="icons">
+        <i class="fas fa-laptop-code"></i>
+        <i class="fas fa-paint-brush"></i>
+        <i class="fas fa-mobile-alt"></i>
+    </div>
+    <p>Our services are tailored to meet the unique needs of your business, ensuring a seamless digital experience across all devices. Let's build something amazing together!</p>
+    <a href="mailto:patrickbanda430@gmail.com" class="cta-button">Get in Touch</a>
+</div>
+
+<!-- Contact Button -->
+<a href="http://127.0.0.1:5500/index.html" class="contact-button">HOME</a>
+
+</body>
+</html>
